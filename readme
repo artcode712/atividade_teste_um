@@ -1,2 +1,16 @@
 Atividade de teste 1
-A aplicação tem como objetivo introduzir a aplicação de php, como 
+A aplicação tem como objetivo permitir que usuários realizem login em um sistema e tenham acesso a uma área restrita. Após o ligon é possivel cadastrar novos usuários e visualizar os usuários que ja foram registrados no bando de dados.
+
+As tecnologias que foram utilizadas são: PHP, HTML, CSS, MySQL, XAMPP e github
+
+O projeto possui arquivos para login, cadastro de usuários, conexão com o banco de dados e estilização da página. Os arquivos estão organizados em pastas para facilitar a manutenção e o entendimento do sistema.
+
+O sistema faz o login dos usuários usando PHP e banco de dados. Depois de entrar, o usuário pode cadastrar novos usuários, visualizar os cadastrados e sair da conta.
+
+Aprendi sobre login em PHP, conexão com banco de dados, organização de arquivos e uso do Git e GitHub para versionamento do projeto.
+
+Identificação e função de cada arquivo, estrutura e trecho relevante da aplicação:
+
+
+
+
