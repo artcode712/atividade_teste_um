@@ -1,20 +1,26 @@
 <?php
-
+// Importa a conexão com o banco
 include("infra/db/connect.php");
 
+// Verifica se o formulário foi enviado
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 
+// Captura os dados digitados
     $usuario = $_POST["usuario"];
     $senha = $_POST["senha"];
 
+        // Consulta para validar login
     $sql = "SELECT * FROM usuario 
     WHERE usuario = '$usuario' 
     AND senha = '$senha'";
 
+ // Verifica se encontrou usuário
     $resultado = $conn -> query($sql);
 
     if($resultado -> num_rows > 0){
+         // Armazena usuário na sessão
         $_SESSION["usuario"] = $usuario;
+        // Redireciona para home
         header("Location: public/home.php");
         exit();
     }else{
