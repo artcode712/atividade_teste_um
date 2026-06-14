@@ -9,6 +9,7 @@
         <th>Usuário</th>
         <th>Senha</th>
         <th>Editar</th>
+         <th>Excluir</th>
     </tr>
 
     <?php
@@ -25,7 +26,7 @@
             <td>" . $linha["username"] . "</td>
             <td>" . $linha["password"] . "</td>
         <td> <a href='editar.php?id=". $linha["id"] ."'>Editar</td>
-
+ <td> <a href='excluir.php?id=". $linha["id"] ."'>Excluir</td>
         </tr>";
     }
     
