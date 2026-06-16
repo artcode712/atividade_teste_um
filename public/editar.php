@@ -1,58 +1,68 @@
 <?php
-// Conecta ao banco de dados
-  include("../infra/db/connect.php");
-  // Verifica se o usuário está logado
-  if (!issets($_SESSION["usuario"])){
+
+include("../infra/db/connect.php");
+// Verifica se o usuário está logado
+if (!isset($_SESSION["usuario"])) {
     header("Location: ../index.php");
     exit();
-  }
-
+}
 // Obtém o ID enviado pela URL
-    $id = $_GET["id"];
-    echo $id;
+$id = $_GET["id"];
 
-    // Busca os dados do usuário no banco
-    $sql = "SELECT * FROM usuario WHERE id = $id";
+// Busca os dados do usuário no banco
+$sql = "SELECT * FROM usuario WHERE id = $id";
 
-    // Executa a consulta
-    resultado = $conn -> query($sql);
+// Executa a consulta
+$resultado = $conn->query($sql);
 
-    // Armazena os dados do usuário em um array
-    $usuario = $resultado -> fetch_assoc();
+$usuario = $resultado->fetch_assoc();
 
-  
-   ?>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    $novoUsuario = $_POST["usuario"];
+    $novaSenha = $_POST["senha"];
 
-<html lang="en">
+    $sqlUpdate = "UPDATE usuario SET
+                    usuario = '$novoUsuario',
+                    senha = '$novaSenha'
+                    WHERE id = '$id'";
+
+    if ($conn->query($sqlUpdate) === TRUE) {
+        header("Location: home.php");
+        exit();
+    } else {
+        echo "<script>alert('Deu errado!');</script>";
+    }
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar</title>
+    <title>Editar Usuário</title>
 </head>
 <body>
-  
-    <h2>Editar usuário</h2>
+
+    <h2>Editar Usuário</h2>
+
     <form method="POST">
-        <label for="usuario">Usuario:</label>
-        <input type="text" name="usuario">
-        <br>
-        <br>
+
+        <label for="usuario">Usuário:</label>
+        <input type="text" name="usuario" value="<?php echo $usuario['usuario']; ?>">
+
+        <br><br>
+
         <label for="senha">Senha:</label>
-        <input type="password" name="senha">
-        <br>
-        <br>
-        <?php
+        <input type="password" name="senha" value="<?php echo $usuario['senha']; ?>">
 
-            if(isset($erro)){
-                echo $erro;
-            }
-        ?>
+        <br><br>
+
         <button type="submit">Salvar</button>
+
     </form>
-    
 
-
-    
 </body>
 </html>
