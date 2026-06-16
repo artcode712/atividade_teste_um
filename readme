@@ -11,6 +11,21 @@ Aprendi sobre login em PHP, conexão com banco de dados, organização de arquiv
 
 Identificação e função de cada arquivo, estrutura e trecho relevante da aplicação:
 
+connect.php: Realiza a conexão com o banco de dados.
+script.sql: Contém os comandos para criação do banco e das tabelas.
+index.php: Exibe a tela de login do sistema.
+home.php: Página principal após o login.
+logout.php: Encerra a sessão do usuário.
+navbar.php: Exibe a barra de navegação.
+table.php: Exibe os usuários em formato de tabela.
+style.css: Define a aparência visual do sistema.
 
+A funcionalidade de exclusão foi adicionada para permitir a remoção de usuários cadastrados. Ao clicar no botão de excluir, o sistema identifica o usuário pelo ID e remove seus dados do banco de dados.
 
+Foram alterados os arquivos responsáveis pela exibição dos usuários, pela exclusão dos registros e pela documentação do projeto.
 
+O principal trecho utilizado foi o comando SQL DELETE, responsável por remover o usuário selecionado do banco de dados.
+
+Em relação as dificuldades, eu acho PHP extremamente complexo e dificil, em um ponto a qual não consegui efetuar o codigo de exclusão sem ajuda.
+
+Foram realizados testes cadastrando e excluindo usuários para verificar se a funcionalidade estava funcionando corretamente e se os dados eram removidos do banco de dados.
