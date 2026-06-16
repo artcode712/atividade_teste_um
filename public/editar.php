@@ -1,17 +1,23 @@
 <?php
+// Conecta ao banco de dados
   include("../infra/db/connect.php");
+  // Verifica se o usuário está logado
   if (!issets($_SESSION["usuario"])){
     header("Location: ../index.php");
     exit();
   }
 
-
+// Obtém o ID enviado pela URL
     $id = $_GET["id"];
     echo $id;
 
+    // Busca os dados do usuário no banco
     $sql = "SELECT * FROM usuario WHERE id = $id";
+
+    // Executa a consulta
     resultado = $conn -> query($sql);
 
+    // Armazena os dados do usuário em um array
     $usuario = $resultado -> fetch_assoc();
 
   
