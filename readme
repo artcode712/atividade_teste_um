@@ -29,3 +29,7 @@ O principal trecho utilizado foi o comando SQL DELETE, responsável por remover 
 Em relação as dificuldades, eu acho PHP extremamente complexo e dificil, em um ponto a qual não consegui efetuar o codigo de exclusão sem ajuda.
 
 Foram realizados testes cadastrando e excluindo usuários para verificar se a funcionalidade estava funcionando corretamente e se os dados eram removidos do banco de dados.
+
+Foi adicionado a confirmção de exclusão, além de outros ajustes como na parte de editar.
+
+Instale o XAMPP, importe o arquivo script.sql no phpMyAdmin, coloque o projeto na pasta htdocs, inicie o Apache e o MySQL e acesse o sistema pelo navegador.
