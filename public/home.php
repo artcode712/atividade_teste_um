@@ -13,6 +13,7 @@
         // Recebe dados do formulário de cadastro
         $usuario = $_POST["usuario"];
         $senha = $_POST["senha"];
+        
         // Insere novo usuário no banco
         $sql = "INSERT INTO users (usuario, senha) VALUES ('$usuario','$senha')";
         if($conn -> query($sql) === TRUE){
